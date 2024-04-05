@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mindsync/page/DoctorDetails.dart';
 
 class ReportSent extends StatefulWidget {
   final Widget? child;

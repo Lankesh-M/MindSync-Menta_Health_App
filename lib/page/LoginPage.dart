@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mindsync/Doctor/ReportShow.dart';
 import 'package:mindsync/model/patient_model.dart';
-import 'package:mindsync/page/DoctorReport.dart';
 import 'package:mindsync/page/PatientPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

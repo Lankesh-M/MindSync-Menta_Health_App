@@ -8,7 +8,8 @@ import 'package:mindsync/page/MimiBot.dart';
 import 'package:mindsync/page/PatientPage.dart';
 
 class NaviBar extends StatefulWidget {
-  const NaviBar({super.key});
+  NaviBar({super.key, required this.currindex});
+  final int currindex;
 
   @override
   State<NaviBar> createState() => _NaviBarState();
@@ -17,6 +18,18 @@ class NaviBar extends StatefulWidget {
 class _NaviBarState extends State<NaviBar> {
   GlobalKey<CurvedNavigationBarState> _key = GlobalKey();
   int _index = 0;
+  void initState() {
+    super.initState();
+    _index = widget.currindex;
+    // You can use widget.myData here
+  }
+
+  void _onItemTapped(int selectedindex) {
+    setState(() {
+      _index = selectedindex;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return CurvedNavigationBar(
@@ -32,17 +45,15 @@ class _NaviBarState extends State<NaviBar> {
           label: "",
         ),
       ],
-      height: 60,
+      height: 40,
       index: _index,
       onTap: (selectedIndex) {
-        print(selectedIndex);
-        setState(() {
-          _index = selectedIndex;
-        });
+        _onItemTapped(selectedIndex);
 
         switch (selectedIndex) {
           case 0:
             // Navigate to the Home screen
+            _onItemTapped(selectedIndex);
             Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -51,6 +62,8 @@ class _NaviBarState extends State<NaviBar> {
 
             break;
           case 1:
+            _onItemTapped(selectedIndex);
+
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => Chatbot()));
             break;

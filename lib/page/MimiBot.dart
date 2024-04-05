@@ -133,10 +133,18 @@ class _ChatbotState extends State<Chatbot> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const NaviBar(),
+      backgroundColor: const Color.fromARGB(221, 50, 50, 50),
+      bottomNavigationBar: NaviBar(
+        currindex: 1,
+      ),
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(221, 82, 82, 82),
         title: const Center(
-          child: Text("Mimi Bot"),
+          child: Text(
+            "Mimi Bot      ",
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(

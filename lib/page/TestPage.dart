@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mindsync/model/question_model.dart';
-import 'package:mindsync/page/MimiBot.dart';
 import 'package:mindsync/screen/TalkBot.dart';
 import 'package:mindsync/widget/BottomNavigaton.dart';
 import 'package:mindsync/widget/question_widget.dart';
@@ -41,7 +40,9 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: grad,
-      bottomNavigationBar: NaviBar(),
+      bottomNavigationBar: NaviBar(
+        currindex: 0,
+      ),
       // appBar: AppBar(
       //   title: Text(
       //     'Test',
@@ -54,16 +55,10 @@ class _TestState extends State<Test> {
       // ),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromARGB(211, 136, 220, 140),
-
-              // Colors.teal,
-              Color.fromARGB(255, 59, 212, 177),
-              // Color(0xFF4DB6AC),
-            ],
+          image: DecorationImage(
+            image: NetworkImage(
+                'https://imgs.search.brave.com/J791ZkSuBgY_YQpYN1X--9z8q4lH6WZIh9TjWeAIi20/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzQ5L2Rh/LzQyLzQ5ZGE0MmQ3/Njc0NzIzY2FkYjVj/YjUzZDg5MWI3ODZm/LmpwZw'),
+            fit: BoxFit.cover,
           ),
         ),
         child: PageView.builder(
@@ -95,13 +90,6 @@ class _TestState extends State<Test> {
                             curve: Curves.ease,
                           );
                         } else {
-                          // if (totalScore <= 5) {
-                          //   Navigator.pushAndRemoveUntil(
-                          //       context,
-                          //       MaterialPageRoute(
-                          //           builder: (context) => const TalkToBot()),
-                          //       (route) => false);
-                          // } else {}
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(

@@ -25,7 +25,7 @@ class MindSync extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => LoginPage(),
-        '/temp': (context) => PatientPage(patient_name: "Patient1"),
+        '/temp': (context) => const PatientPage(patient_name: "Patient1"),
       },
     );
   }

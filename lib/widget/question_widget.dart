@@ -15,7 +15,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white,
+      color: Colors.transparent,
       margin: EdgeInsets.fromLTRB(40, 0, 40, 0),
       child: Column(
         children: <Widget>[
@@ -24,7 +24,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
               widget.question.text,
               style: const TextStyle(
                   fontSize: 16.8,
-                  color: Color.fromARGB(255, 0, 0, 0),
+                  color: Colors.white,
                   fontWeight: FontWeight.w700),
             ),
           ),
@@ -43,7 +43,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                   backgroundColor:
                       widget.question.selectedOption == 'None of the time'
                           ? Colors.green
-                          : Colors.tealAccent,
+                          : Colors.grey[300],
                 ),
                 child: const Text('None of the time',
                     style: TextStyle(
@@ -65,7 +65,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                   backgroundColor:
                       widget.question.selectedOption == 'A little of the time'
                           ? Colors.green
-                          : Colors.tealAccent,
+                          : Colors.grey[300],
                 ),
                 child: const Text('A little of the time',
                     style: TextStyle(
@@ -88,7 +88,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                   backgroundColor:
                       widget.question.selectedOption == 'Most of the time'
                           ? Colors.green
-                          : Colors.tealAccent,
+                          : Colors.grey[300],
                 ),
                 child: const Text('Most of the time',
                     style: TextStyle(
@@ -111,7 +111,7 @@ class _QuestionWidgetState extends State<QuestionWidget> {
                   backgroundColor:
                       widget.question.selectedOption == 'All of the time'
                           ? Colors.green
-                          : Colors.tealAccent,
+                          : Colors.grey[300],
                 ),
                 child: const Text('All of the time',
                     style: TextStyle(

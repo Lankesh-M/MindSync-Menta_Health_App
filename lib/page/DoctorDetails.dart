@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mindsync/page/DoctorReport.dart';
 import 'package:mindsync/page/PatientPage.dart';
 import 'package:mindsync/screen/ReportSent.dart';
-import 'package:mindsync/screen/TickPage.dart';
 import 'package:mindsync/widget/BottomNavigaton.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class DoctorDetails extends StatefulWidget {
   DoctorDetails({super.key});
@@ -49,7 +46,9 @@ class _DoctorDetailsState extends State<DoctorDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const NaviBar(),
+      bottomNavigationBar: NaviBar(
+        currindex: 2,
+      ),
       appBar: AppBar(
         title: const Center(child: Text('Choose your doctor')),
       ),
